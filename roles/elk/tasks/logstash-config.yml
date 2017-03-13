@@ -1,19 +1,2 @@
 ---
 
-- name: logstash beats listener configuration
-  template:
-    src: logstash-beats.conf.j2
-    dest: /etc/logstash/conf.d/logstash-beats.conf    
-  notify: restart logstash
-
-- name: logstash wazuh template
-  copy:
-    src: wazuh-elastic5-template.json
-    dest: /etc/logstash/wazuh-elastic5-template.json
-  notify: restart logstash
-
-- name: logstash wazuh configuration
-  template:
-    src: 01-wazuh.conf
-    dest: /etc/logstash/conf.d/01-wazuh.conf
-  notify: restart logstash
