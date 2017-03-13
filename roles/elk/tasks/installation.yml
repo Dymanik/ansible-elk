@@ -1,0 +1,27 @@
+---
+
+- name: add elastic PGP key
+  apt_key:
+    id: D88E42B4
+    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: add elasticsearch repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/5.x/apt stable main
+    state: present
+
+- name: Install elasticsearch
+  apt:
+    name: elasticsearch
+    state: present
+
+- name: Install zip
+  apt:
+    name: zip
+    state: present

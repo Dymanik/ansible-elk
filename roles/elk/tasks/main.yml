@@ -1,0 +1,25 @@
+---
+
+- include: java.yml
+  tags:
+    - java
+
+- include: repository.yml
+  tags:
+    repository
+
+- include: elasticsearch.yml
+  tags:
+    - install
+
+- include: elasticsearch-config.yml
+
+- include: kibana.yml
+
+- include: kibana-config.yml
+  
+- include: logstash.yml
+
+- include: logstash-config.yml
+
+

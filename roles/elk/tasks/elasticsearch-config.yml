@@ -1,0 +1,7 @@
+---
+
+- name: elasticsearch config template
+  template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+  notify: restart elasticsearch

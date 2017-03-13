@@ -1,0 +1,8 @@
+---
+
+
+- name: Install elasticsearch
+  apt:
+    name: elasticsearch=5.2.2
+    state: present
+  notify: restart elasticsearch
